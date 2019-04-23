@@ -9,7 +9,9 @@ jobs:
       steps:
          - checkout
 
-#         - run:
+        - run:
+           name: List current directory
+           command: ls -la
 #            name: Update and Install dependencies
 #            command: |
 #               apt-get update
