@@ -17,7 +17,6 @@ jobs:
          name: Update and Install dependencies
          command: |
             sudo apt-get update
-            sudo apt-get install -y pip
 
       - run:
          name: Create python package
