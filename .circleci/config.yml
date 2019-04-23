@@ -2,16 +2,16 @@
 version: 2.1
 
 jobs:
-   build:
-      docker:
-         - image: circleci/python:latest
-         
-      steps:
-         - checkout
+  build:
+    docker:
+      - image: circleci/python:latest
 
-        - run:
-           name: List current directory
-           command: ls -la
+    steps:
+      - checkout
+
+      - run:
+         name: List current directory
+         command: ls -la
 #            name: Update and Install dependencies
 #            command: |
 #               apt-get update
