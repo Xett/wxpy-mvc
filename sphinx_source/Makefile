@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = ..\docs
-SPHINXPROJ    = ..\Laplace
+SPHINXPROJ    = ..\wxpy-mvc
 SOURCEDIR     = .
 BUILDDIR      = docs
 
