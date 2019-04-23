@@ -32,4 +32,5 @@ jobs:
       - run:
          name: Create Sphinx documentation
          command: |
-            sh sphinx_source/Makefile html
+            cd sphinx_source
+            sh Makefile ../html
