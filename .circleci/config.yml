@@ -12,6 +12,17 @@ jobs:
       - run:
          name: List current directory
          command: ls -la
+
+      - run:
+         name: Create python package
+         command: python setup.py bdist_wheel
+
+      - run:
+         name: Install python package
+         command: |
+            cd dist
+            python -m pip install wxpy_mvc-0.1-py3-none-any.whl
+            cd ..
 #            name: Update and Install dependencies
 #            command: |
 #               apt-get update
