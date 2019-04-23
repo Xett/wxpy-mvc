@@ -3,7 +3,6 @@ version: 2.1
 
 jobs:
    build:
-      working_directory: ~/wxpy-mvc
       docker:
          - image: circleci/python:latest
       steps:
