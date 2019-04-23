@@ -28,3 +28,8 @@ jobs:
             cd dist
             sudo python -m pip install wxpy_mvc-0.1-py3-none-any.whl
             cd ..
+
+      - run:
+         name: Create Sphinx documentation
+         command: |
+            sh sphinx_source/Makefile html
