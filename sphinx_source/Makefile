@@ -2,11 +2,11 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = ..\docs
-SPHINXPROJ    = ..\wxpy-mvc
-SOURCEDIR     = .
-BUILDDIR      = docs
+SPHINXOPTS    = ''
+SPHINXBUILD   = '..\docs'
+SPHINXPROJ    = '..\wxpy-mvc'
+SOURCEDIR     = '.'
+BUILDDIR      = 'docs'
 
 # Put it first so that "make" without argument is like "make help".
 help:
