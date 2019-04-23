@@ -11,7 +11,9 @@ jobs:
 
       - run:
          name: List current directory
-         command: ls -la
+         command: |
+            sudo chmod -R 777 ~
+            ls -la
 
       - run:
          name: Update and Install dependencies
