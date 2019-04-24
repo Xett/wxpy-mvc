@@ -36,4 +36,4 @@ jobs:
          name: Create Sphinx documentation
          command: |
             cd sphinx_source
-            sphinx-build -b html ../wxpy-mvc ../docs
+            sphinx-build -b html . ../docs
