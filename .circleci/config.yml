@@ -19,6 +19,7 @@ jobs:
          name: Update and Install dependencies
          command: |
             sudo apt-get update
+            sudo pip install Sphinx
 
       - run:
          name: Create python package
@@ -35,4 +36,4 @@ jobs:
          name: Create Sphinx documentation
          command: |
             cd sphinx_source
-            sudo make html
+            sudo make
