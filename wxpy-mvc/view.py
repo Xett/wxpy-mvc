@@ -1,6 +1,6 @@
 class View:
     def __init__(self):
-        return
+        self.XMLParser=ViewXMLParser()
 class ViewXMLParser:
     def __init__(self):
         self.DOMTree=None
