@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import wx
 import wxpy-mvc
 if __name__=="__main__":
