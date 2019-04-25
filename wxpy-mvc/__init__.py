@@ -1,4 +1,4 @@
 """
 #
 """
-__all__=['controller']
+__all__=['model', 'view', 'controller']
