@@ -1,1 +1,1 @@
-# wxpy-mvc
+# wxpy_mvc

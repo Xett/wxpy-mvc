@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=..\docs
-set SPHINXPROJ=..\mwpy-mvc
+set SPHINXPROJ=..\wxpy_mvc
 
 if "%1" == "" goto help
 

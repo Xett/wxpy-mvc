@@ -4,15 +4,15 @@ with open("README.md", "r") as fh:
     long_description=fh.read()
 
 setuptools.setup(
-    name='wxpy-mvc',
+    name='wxpy_mvc',
     version='0.1',
-    scripts=['bin/wxpy-mvc'],
+    scripts=['bin/wxpy_mvc'],
     author='Xet',
     author_email='ethan.jones@my.jcu.edu.au',
     description='wx python MVC framework',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Xett/wxpy-mvc",
+    url="https://github.com/Xett/wxpy_mvc",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

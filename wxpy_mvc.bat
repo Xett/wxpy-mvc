@@ -18,7 +18,7 @@ if "%~1" EQU "make-docs" goto :make-docs
 
 :uninstall
 
-pip uninstall wxpy-mvc
+pip uninstall wxpy_mvc
 if "%~1" EQU "uninstall" goto list
 
 :install

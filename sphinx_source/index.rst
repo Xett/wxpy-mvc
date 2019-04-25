@@ -1,10 +1,10 @@
-wxpy-mvc Documentation
+wxpy_mvc Documentation
 *****************************
 
 .. toctree::
    :maxdepth: 1
 
-.. automodule:: wxpy-mvc
+.. automodule:: wxpy_mvc
     :members:
     :undoc-members:
     :show-inheritance:

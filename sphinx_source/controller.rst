@@ -1,12 +1,12 @@
 controller module
 ******************
-.. automodule:: wxpy-mvc.controller
+.. automodule:: wxpy_mvc.controller
     :undoc-members:
 
 controller Class
 =================
 
-.. autoclass:: wxpy-mvc.controller.controller
+.. autoclass:: wxpy_mvc.controller.controller
    :members:
    :private-members:
    :special-members:
