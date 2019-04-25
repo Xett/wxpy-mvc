@@ -1,6 +1,9 @@
 import wx
 import wxpy-mvc
+from wxpy-mvc.model import Model
+from wxpy-mvc.view import View
+from wxpy-mvc.controller import Controller
 if __name__=="__main__":
-    m=wxpy-mvc.model.Model()
-    v=wxpy-mvc.view.View()
-    c=wxpy-mvc.controller.Controller(m, v)
+    m=Model()
+    v=View()
+    c=Controller(m, v)
