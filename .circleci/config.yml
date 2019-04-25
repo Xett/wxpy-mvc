@@ -42,6 +42,7 @@ jobs:
          name: Run demo script
          command: |
             cd ..
+            ls -la
             cd demo
             chmod +x demo.py
             ./demo.py
