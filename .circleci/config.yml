@@ -19,7 +19,7 @@ jobs:
          name: Update and Install dependencies
          command: |
             sudo apt-get update
-            sudo apt-get install python-wxgtk2.8
+            sudo pip install -U wxPython
             sudo pip install Sphinx
 
       - run:
