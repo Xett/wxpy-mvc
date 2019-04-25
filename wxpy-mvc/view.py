@@ -1,23 +1,24 @@
 class View:
-    def __init__(self):
+    def __init__(self, pathToDefinitions):
         self.XMLParser=ViewXMLParser()
 class ViewXMLParser:
-    def __init__(self):
+    def __init__(self, pathToDefinitions):
         self.DOMTree=None
         self.collection=None
+        self.pathToDefinitions=pathToDefinitions
     def configure(self, pathToDefinitions):
-        self.DOMTree=xml.dom.minidom.parse(pathToDefinitions+"\\MainWindow.xml")
+        self.DOMTree=xml.dom.minidom.parse(self.pathToDefinitions+"\\MainWindow.xml")
     def parse(self):
         self.collection=self.DOMTree.documentElement
-        if self.collection.nodeName="Window":
-            windowDef={
+        if self.collection.nodeName="Frame":
+            frameDef={
                 'parent':None,
                 'id':-1,
-                'title':'Window',
+                'title':'Frame',
                 'pos':wx.DefaultPosition,
                 'size':wx.DefaultSize,
                 'style':wx.DEFAULT_FRAME_STYLE,
-                'name':'Window'
+                'name':'Frame'
                 }
             args={
                 'parent':None,
@@ -28,7 +29,7 @@ class ViewXMLParser:
                 'style':None,
                 'name':None
                 }
-            for arg, default in windowDef.items():
+            for arg, default in frameDef.items():
                 _arg=self.collection.getAttribute(arg)
                 if _arg=='':
                     _arg=default
@@ -37,7 +38,7 @@ class ViewXMLParser:
                     x=None
                     y=None
                 args[arg]=_arg
-            window=wx.Frame(
+            frame=wx.Frame(
                 args['parent'],
                 id=args['id'],
                 title=args['title'],

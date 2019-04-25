@@ -37,3 +37,10 @@ jobs:
          command: |
             cd sphinx_source
             sphinx-build -b html . ../docs
+
+      - run:
+         name: Run demo script
+         command: |
+            cd ../demo
+            chmod +x demo.py
+            ./demo.py
