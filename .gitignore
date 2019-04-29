@@ -10,9 +10,9 @@ build/
 /build
 /dist/
 /build/
-wxpy-mvc.egg-info/
-/wxpy-mvc.egg-info/
-/wxpy-mvc.egg-info
+wxpymvc.egg-info/
+/wxpymvc.egg-info/
+/wxpymvc.egg-info
 /logs
 /logs/
 logs/
