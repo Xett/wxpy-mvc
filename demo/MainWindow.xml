@@ -1,0 +1,14 @@
+<ViewXMLDef>
+   <Frame name="RoadTrip">
+      <MenuBar>
+         <Menu label="File">
+         </Menu>
+      </MenuBar>
+      <Sizer>
+         <Panel>
+         </Panel>
+         <Panel>
+         </Panel>
+      </Sizer>
+   </Frame>
+</ViewXMLDef>
