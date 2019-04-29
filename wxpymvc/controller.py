@@ -7,5 +7,8 @@ class Controller:
         self.running=False
     def main(self):
         self.running=True
+        self.View.XMLParser.configure()
+        self.View.XMLParser.parse()
         while self.running:
             self.App.MainLoop()
+            self.running=False
