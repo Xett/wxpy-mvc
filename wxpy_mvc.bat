@@ -18,7 +18,7 @@ if "%~1" EQU "make-docs" goto :make-docs
 
 :uninstall
 
-pip uninstall wxpy_mvc
+pip uninstall wxpymvc
 if "%~1" EQU "uninstall" goto list
 
 :install
@@ -27,7 +27,7 @@ python setup.py bdist_wheel
 
 cd dist
 
-python -m pip install wxpy_mvc-0.1-py3-none-any.whl
+python -m pip install wxpymvc-0.1-py3-none-any.whl
 
 cd ..
 
