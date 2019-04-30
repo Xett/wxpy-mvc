@@ -186,7 +186,7 @@ class ViewXMLParser:
             # attr is the value read from the file for the attribute
             attr=element.getAttribute(argAttrString)
             # if the attribute is blank, we set it to the default
-            if attr=!'':
+            if attr!='':
                 # argAttrString is the key, so we can use them in both attributes
                 # args[argAttrString] is the attribute we want to set
                 # attributes[argAttrString](attr) calls the parsing function for the attribute
