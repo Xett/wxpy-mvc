@@ -90,7 +90,16 @@ class ViewXMLParser:
         }
         # self.renderPanelDefaults={} custom panel
         # Widgets
-        self.bitmapButtomDefaults={}
+        self.bitmapButtonDefaults={
+            'Parent':self.parseAttrParent,
+            'ID':self.parseAttrID,
+            'Bitmap':self.parseAttrBitmap,
+            'Position':self.parseAttrPos,
+            'Size':self.parseAttrSize,
+            'Style':self.parseAttrStyle,
+            'Validator':self.parseAttrValidator,
+            'Name':self.parseAttrName
+        }
         self.bookCtrlBaseDefaults={}
         self.buttonDefaults={}
         self.choicebookDefaults={}
