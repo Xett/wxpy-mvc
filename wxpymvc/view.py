@@ -147,7 +147,7 @@ class ViewXMLParser:
             "SpellCheck":wx.ID_SPELL_CHECK,
             "Strikethrough":wx.ID_STRIKETHROUGH
         }
-        self.attributeStyles{}
+        self.attributeStyles={}
     def configure(self):
         self.XMLDoc=xml.dom.minidom.parse(self.pathToDefinitions+"\\MainWindow.xml")
     def parse(self):
