@@ -21,7 +21,16 @@ class ViewXMLParser:
             'name':self.parseAttrName
         }
         self.elements={
-            'Frame':self.parseFrame
+            'Frame':self.parseFrame,
+            'MenuBar':self.parseMenuBar,
+            'Menu':self.parseMenu,
+            'MenuItem':self.parseMenuItem,
+            'BoxSizer':self.parseBoxSizer,
+            'StaticBoxSizer':self.parseStaticBoxSizer,
+            'GridSizer':self.parseGridSizer,
+            'GridBagSizer':self.parseGridBagSizer,
+            'FlexGridSizer':self.parseFlexGridSizer,
+            'WrapSizer':self.parseWrapSizer
         }
         self.rootDefaults={}
         self.frameDefaults={
@@ -33,6 +42,22 @@ class ViewXMLParser:
             'style':wx.DEFAULT_FRAME_STYLE,
             'name':'Frame'
         }
+        # Sizers
+        self.boxSizerDefaults={
+            'Orient': self.parseAttrOrient
+        }
+        self.staticBoxSizerDefaults={
+            'Orient':self.parseAttrOrient,
+            'Parent':self.parseAttrParent,
+            'Label':self.parseAttrLabel
+        }
+        self.gridSizerDefaults={}
+        self.gridBagSizerDefaults={}
+        self.flexGridSizerDefaults={}
+        self.wrapSizer={}
+        # Panels
+        self.panelDefaults={}
+        # Attributes
         self.attributeIDs={
             "Open":wx.ID_OPEN,
             "Close":wx.ID_CLOSE,
@@ -174,6 +199,26 @@ class ViewXMLParser:
         )
         frame.Show()
         self.frames.append(frame)
+    # Sizers
+    def parseBoxSizer(self, element):
+        args=self.parseAttributes(element, self.boxSizerDefaults)
+        return
+    def parseStaticBoxSizer(self, element):
+        args=self.parseAttributes(element, self.staticBoxSizerDefaults)
+        return
+    def parseGridSizer(self, element):
+        args=self.parseAttributes(element, self.gridSizerDefaults)
+        return
+    def parseGridBagSizer(self, element):
+        args=self.parseAttributes(element, self.gridBagSizerDefaults)
+        return
+    def parseFlexGridSizer(self, element):
+        args=self.parseAttributes(element, self.flexGridSizerDefaults)
+        return
+    def parseWrapSizer(self, element):
+        args=self.parseAttributes(element, self.wrapSizerDefaults)
+        return
+
     def parseAttributes(self, element, attributeDefaults):
         # args is a dictionary of the arguments that will be fed into the wx object being created
         # we copy it and clear all values
@@ -212,3 +257,5 @@ class ViewXMLParser:
         return attr
     def parseAttrName(self, attr):
         return attr
+    def parseAttrOrient(self, attr):
+        return
