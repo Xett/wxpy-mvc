@@ -154,7 +154,6 @@ class ViewXMLParser:
         if self.XMLDoc.documentElement.tagName==self.rootTagName:
             args=self.parseAttributes(self.XMLDoc.documentElement, self.rootDefaults)
             # set dat root shit here
-            return
         for element in self.XMLDoc.documentElement.childNodes:
             self.parseElement(element)
     def parseElement(self, element):
