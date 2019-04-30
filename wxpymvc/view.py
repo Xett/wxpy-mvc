@@ -34,13 +34,13 @@ class ViewXMLParser:
         }
         self.rootDefaults={}
         self.frameDefaults={
-            'parent':None,
-            'id':-1,
-            'title':'Frame',
-            'pos':wx.DefaultPosition,
-            'size':wx.DefaultSize,
-            'style':wx.DEFAULT_FRAME_STYLE,
-            'name':'Frame'
+            'Parent':None,
+            'ID':-1,
+            'Title':'Frame',
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':wx.DEFAULT_FRAME_STYLE,
+            'Name':'Frame'
         }
         # Sizers
         self.boxSizerDefaults={
@@ -51,12 +51,75 @@ class ViewXMLParser:
             'Parent':self.parseAttrParent,
             'Label':self.parseAttrLabel
         }
-        self.gridSizerDefaults={}
-        self.gridBagSizerDefaults={}
-        self.flexGridSizerDefaults={}
-        self.wrapSizer={}
+        self.gridSizerDefaults={
+            'Columns':self.parseAttrColumns,
+            'Rows':self.parseAttrRows,
+            'VGap':self.parseAttrVGap,
+            'HGap':self.parseAttrHGap
+        }
+        self.gridBagSizerDefaults={
+            'VGap':self.parseAttrVGap,
+            'HGap':self.parseAttrHGap
+        }
+        self.flexGridSizerDefaults={
+            'Columns':self.parseAttrColumns,
+            'Rows':self.parseAttrRows,
+            'VGap':self.parseAttrVGap,
+            'HGap':self.parseAttrHGap
+        }
+        self.wrapSizer={
+            'Orient':self.parseAttrOrient,
+            'Flags':self.parseAttrWrapFlags
+        }
         # Panels
-        self.panelDefaults={}
+        self.panelDefaults={
+            'Parent':self.parseAttrParent,
+            'ID':-1,
+            'Position':self.parseAttrPos,
+            'Size':self.parseAttrSize,
+            'Style':self.parseAttrStyle,
+            'Name':self.parseAttrName
+        }
+        self.scrolledWindowDefaults={
+            'Parent':self.parseAttrParent,
+            'ID':self.parseAttrID,
+            'Position':self.parseAttrPos,
+            'Size':self.parseAttrSize,
+            'Style':self.parseAttrStyle,
+            'Name':self.parseAttrName
+        }
+        # self.renderPanelDefaults={} custom panel
+        # Widgets
+        self.bitmapButtomDefaults={}
+        self.bookCtrlBaseDefaults={}
+        self.buttonDefaults={}
+        self.choicebookDefaults={}
+        self.collapsiblePaneDefaults={}
+        self.colourPickerCtrlDefaults={}
+        self.comboCtrlDefaults={}
+        self.dirFilterListCtrlDefaults={}
+        self.dirPickerCtrlDefaults={}
+        self.fileCtrlDefaults={}
+        self.filePickerCtrlDefaults={}
+        self.fontPickerCtrlDefaults={}
+        self.genericDirCtrlDefaults={}
+        self.headerCtrlDefaults={}
+        self.headerCtrlSimpleDefaults={}
+        self.listCtrlDefaults={}
+        self.notebookDefaults={}
+        self.rearrangeCtrlDefaults={}
+        self.rearrangeListDefaults={}
+        self.scrollBarDefaults={}
+        self.searchCtrlDefaults={}
+        self.simpleBookDefaults={}
+        self.sliderDefaults={}
+        self.spinCtrlDefaults={}
+        self.spinCtrlDoubleDefaults={}
+        self.staticTextDefaults={}
+        self.textCtrlDefaults={}
+        self.treeBookDefaults={}
+        self.treeCtrlDefaults={}
+        self.vListBoxDefaults={}
         # Attributes
         self.attributeIDs={
             "Open":wx.ID_OPEN,
@@ -218,6 +281,8 @@ class ViewXMLParser:
     def parseWrapSizer(self, element):
         args=self.parseAttributes(element, self.wrapSizerDefaults)
         return
+
+
 
     def parseAttributes(self, element, attributeDefaults):
         # args is a dictionary of the arguments that will be fed into the wx object being created
