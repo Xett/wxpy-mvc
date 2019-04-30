@@ -160,7 +160,7 @@ class ViewXMLParser:
         return
     def parseElement(self, element):
         for elementString, func in self.elements.items():
-            self.elements[element.nodeName](element)
+            self.elements[element.tagName](element)
             for childElement in element.childNodes:
                 self.parseElement(childElement)
     def parseFrame(self, element):
