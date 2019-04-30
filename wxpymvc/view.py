@@ -152,12 +152,11 @@ class ViewXMLParser:
         self.XMLDoc=xml.dom.minidom.parse(self.pathToDefinitions+"\\MainWindow.xml")
     def parse(self):
         if self.XMLDoc.documentElement.tagName==self.rootTagName:
-            self.parseRoot()
+            args=self.parseAttributes(self.XMLDoc.documentElement, self.rootDefaults)
+            # set dat root shit here
+            return
         for element in self.XMLDoc.documentElement.childNodes:
             self.parseElement(element)
-    def parseRoot(self):
-        args=self.parseAttributes(self.XMLDoc.documentElement, self.rootDefaults)
-        return
     def parseElement(self, element):
         for elementString, func in self.elements.items():
             self.elements[element.tagName](element)
