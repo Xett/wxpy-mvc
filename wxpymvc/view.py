@@ -44,61 +44,61 @@ class ViewXMLParser:
         }
         # Sizers
         self.boxSizerDefaults={
-            'Orient': self.parseAttrOrient
+            'Orient': wx.HORIZONTAL
         }
         self.staticBoxSizerDefaults={
-            'Orient':self.parseAttrOrient,
-            'Parent':self.parseAttrParent,
-            'Label':self.parseAttrLabel
+            'Orient':wx.HORIZONTAL,
+            'Parent':None,
+            'Label':'StaticBoxSizer'
         }
         self.gridSizerDefaults={
-            'Columns':self.parseAttrColumns,
-            'Rows':self.parseAttrRows,
-            'VGap':self.parseAttrVGap,
-            'HGap':self.parseAttrHGap
+            'Columns':1,
+            'Rows':1,
+            'VGap':0,
+            'HGap':0
         }
         self.gridBagSizerDefaults={
-            'VGap':self.parseAttrVGap,
-            'HGap':self.parseAttrHGap
+            'VGap':0,
+            'HGap':0
         }
         self.flexGridSizerDefaults={
-            'Columns':self.parseAttrColumns,
-            'Rows':self.parseAttrRows,
-            'VGap':self.parseAttrVGap,
-            'HGap':self.parseAttrHGap
+            'Columns':1,
+            'Rows':1,
+            'VGap':0,
+            'HGap':0
         }
         self.wrapSizer={
-            'Orient':self.parseAttrOrient,
-            'Flags':self.parseAttrWrapFlags
+            'Orient':wx.HORIZONTAL,
+            'Flags':None
         }
         # Panels
         self.panelDefaults={
-            'Parent':self.parseAttrParent,
+            'Parent':None,
             'ID':-1,
-            'Position':self.parseAttrPos,
-            'Size':self.parseAttrSize,
-            'Style':self.parseAttrStyle,
-            'Name':self.parseAttrName
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':wx.TAB_TRAVERSAL,
+            'Name':'Panel'
         }
         self.scrolledWindowDefaults={
-            'Parent':self.parseAttrParent,
-            'ID':self.parseAttrID,
-            'Position':self.parseAttrPos,
-            'Size':self.parseAttrSize,
-            'Style':self.parseAttrStyle,
-            'Name':self.parseAttrName
+            'Parent':None,
+            'ID':-1,
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':,
+            'Name':'ScrolledWindow'
         }
         # self.renderPanelDefaults={} custom panel
         # Widgets
         self.bitmapButtonDefaults={
-            'Parent':self.parseAttrParent,
-            'ID':self.parseAttrID,
-            'Bitmap':self.parseAttrBitmap,
-            'Position':self.parseAttrPos,
-            'Size':self.parseAttrSize,
-            'Style':self.parseAttrStyle,
-            'Validator':self.parseAttrValidator,
-            'Name':self.parseAttrName
+            'Parent':None,
+            'ID':-1,
+            'Bitmap':None,
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':,
+            'Validator':,
+            'Name':'BitmapButton'
         }
         self.bookCtrlBaseDefaults={}
         self.buttonDefaults={}
