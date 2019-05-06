@@ -9,17 +9,10 @@ class ViewXMLParser:
         self.XMLDoc=None
         self.frames=[]
         self.pathToDefinitions=pathToDefinitions
+        # XML root element defs
         self.rootTagName='ViewXMLDef'
-        # attributes is a dictionary of parsable attribute functions and the string used to identify them
-        self.attributes={
-            'parent':self.parseAttrParent,
-            'id':self.parseAttrID,
-            'title':self.parseAttrTitle,
-            'pos':self.parseAttrPos,
-            'size':self.parseAttrSize,
-            'style':self.parseAttrStyle,
-            'name':self.parseAttrName
-        }
+        self.rootDefaults={}
+        # Element defs
         self.elements={
             'Frame':self.parseFrame,
             'MenuBar':self.parseMenuBar,
@@ -32,15 +25,24 @@ class ViewXMLParser:
             'FlexGridSizer':self.parseFlexGridSizer,
             'WrapSizer':self.parseWrapSizer
         }
-        self.rootDefaults={}
+        ## Top Level Windows
         self.frameDefaults={
             'Parent':None,
-            'ID':-1,
+            'ID':wx.ID_ANY,
             'Title':'Frame',
             'Position':wx.DefaultPosition,
             'Size':wx.DefaultSize,
             'Style':wx.DEFAULT_FRAME_STYLE,
             'Name':'Frame'
+        }
+        self.dialogDefaults={
+            'Parent':None,
+            'ID':wx.ID_ANY,
+            'Title':'Dialog',
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':wx.DEFAULT_DIALOG_STYLE,
+            'Name':'Dialog'
         }
         # Sizers
         self.boxSizerDefaults={
@@ -130,6 +132,16 @@ class ViewXMLParser:
         self.treeCtrlDefaults={}
         self.vListBoxDefaults={}
         # Attributes
+        # attributes is a dictionary of parsable attribute functions and the string used to identify them
+        self.attributes={
+            'parent':self.parseAttrParent,
+            'id':self.parseAttrID,
+            'title':self.parseAttrTitle,
+            'pos':self.parseAttrPos,
+            'size':self.parseAttrSize,
+            'style':self.parseAttrStyle,
+            'name':self.parseAttrName
+        }
         self.attributeIDs={
             "Open":wx.ID_OPEN,
             "Close":wx.ID_CLOSE,
