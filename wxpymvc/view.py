@@ -44,6 +44,25 @@ class ViewXMLParser:
             'Style':wx.DEFAULT_DIALOG_STYLE,
             'Name':'Dialog'
         }
+        self.mdiParentFrame{
+            'Parent':None,
+            'ID':wx.ID_ANY,
+            'Title':'MDIParentFrame',
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':wx.DEFAULT_FRAME_STYLE|wx.VSCROLL|wx.HSCROLL,
+            'Name':'MDIParentFrame'
+        }
+        ## Windows
+        self.bannerWindow{
+            'Parent':None,
+            'ID':wx.ID_ANY,
+            'Direction':wx.LEFT,
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':0,
+            'Name':'BannerWindow'
+        }
         # Sizers
         self.boxSizerDefaults={
             'Orient': wx.HORIZONTAL
