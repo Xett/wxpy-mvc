@@ -63,6 +63,28 @@ class ViewXMLParser:
             'Style':0,
             'Name':'BannerWindow'
         }
+        self.glCanvas{
+            'Parent':None,
+            'ID':wx.ID_ANY,
+            'AttributeList':[],
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':0,
+            'Name':'GLCanvas',
+            'Palette':wx.NullPalette
+        }
+        self.htmlHelpWindow{
+            'Parent':None,
+            'ID':wx.ID_ANY,
+            'Position':wx.DefaultPosition,
+            'Size':wx.DefaultSize,
+            'Style':wx.TAB_TRAVERSAL|wx.BORDER_NONE,
+            'HelpStyle':wx.HF_DEFAULT_STYLE,
+            'Data':None
+        }
+        self.menuBar{
+            'Style':0
+        }
         # Sizers
         self.boxSizerDefaults={
             'Orient': wx.HORIZONTAL
